@@ -27,3 +27,14 @@
 *.exe
 *.out
 *.app
+/Snake/.vs/Snake/v14
+/Snake/Debug
+/Snake/packages
+/Snake/Snake/Debug/Snake.tlog
+/Snake/Snake/Debug
+/Snake/Snake.VC.VC.opendb
+/Snake/Snake.VC.db
+/Snake/Snake.sln
+/Snake/Snake/Snake.vcxproj.filters
+/Snake/Snake/Snake.vcxproj
+/Snake/Snake/packages.config
