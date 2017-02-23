@@ -1,7 +1,5 @@
 #include "Snake.h"
 
-
-
 void Snake::update()
 {
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) {
