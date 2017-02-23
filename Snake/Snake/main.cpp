@@ -8,6 +8,7 @@
 int main()
 {
 	sf::RenderWindow window(sf::VideoMode(WINDOW_WIDTH, WINDOW_HEIGH), "SNAKE!");
+	//window.setFramerateLimit(2);
 	sf::CircleShape shape(100.f);
 	shape.setFillColor(sf::Color::Green);
 
@@ -26,7 +27,7 @@ int main()
 		window.clear();
 		
 		window.draw(shape);
-		floor.makeFloor(window);
+		floor.updateFloor(&window);
 		window.display();
 	}
 

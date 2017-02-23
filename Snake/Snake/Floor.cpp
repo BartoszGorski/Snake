@@ -1,7 +1,7 @@
 #include "Floor.h"
 
 
-void Floor::makeFloor(sf::RenderWindow& window)
+void Floor::updateFloor(sf::RenderWindow* window)
 {
 	for (int i = 0; i < rowsCount; i++) {
 		for (int j = 0; j < colCount; j++) {
@@ -10,23 +10,27 @@ void Floor::makeFloor(sf::RenderWindow& window)
 			rect.setFillColor(sf::Color::Transparent);
 			rect.setOutlineThickness(1);
 			rect.setOutlineColor(sf::Color::White);
-			window.draw(rect);
+			window->draw(rect);
 		}
 	}
+	snakeHead->update();
+	snakeHead->move();
+	snakeHead->draw(window);
 }
 
-Floor::Floor(int w, int h, int rows)
+Floor::Floor(int width, int height, int rows)
 {
-	this->width = w;
-	this->height = h;
+	this->width = width;
+	this->height = height;
 	this->rowsCount = rows;
 	colCount = rowsCount;
 	colWidth = width / rowsCount;
 	rowHeight = height / rowsCount;
-	
+	snakeHead = new Snake(rowsCount, colCount, rowHeight, colWidth, 8);
 }
 
 
 Floor::~Floor()
 {
+	delete snakeHead;
 }
